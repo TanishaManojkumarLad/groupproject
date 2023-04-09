@@ -4,7 +4,7 @@ import Contact from "./Contact.js";
 function App() {
   return (
     
-        <Contact/> 
+        
       
   
   );
