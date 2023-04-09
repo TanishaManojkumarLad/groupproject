@@ -1,7 +1,7 @@
 
 import "./contact.css";
 
-function Form() => {
+function Form() {
   
 
   return (
