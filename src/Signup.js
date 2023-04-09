@@ -66,7 +66,7 @@ function UserForm() {
                 </div>
                 <div>
                     <lable id="address"> Address: </lable>
-                    <input type="text" onChange={(e) => setAddress(e.target.value)} />
+                    <textarea onChange={(e) => setAddress(e.target.value)} />
                 </div>
                 <div>
                     <lable id="number"> Contact Number: </lable>
