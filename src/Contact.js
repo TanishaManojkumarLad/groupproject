@@ -1,10 +1,11 @@
+
 import "./contact.css";
 
-const Form = () => {
+function Form() => {
   
 
   return (
-    <>
+    <div>
    
       <div className="container">
         <div className="contact-box">
@@ -64,8 +65,13 @@ const Form = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Form;
+
+
+export default function Contact(){
+    return<div><Form/> </div>
+}
+
