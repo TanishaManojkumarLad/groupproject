@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import { LinkContainer } from 'react-router-bootstrap';
 import Home from './Home';
 import Food from './Food';
@@ -37,6 +39,8 @@ function MenuBar(){
 <div>
           <Navbar  bg="dark" variant="dark">
             <Container>
+              <Row>
+                <Col xs={12}>
               <Nav variant="pills" defaultActiveKey="/">
                 <LinkContainer to="/">
                   <Nav.Link>Home</Nav.Link>
@@ -54,6 +58,8 @@ function MenuBar(){
                   <Nav.Link>Contact Us</Nav.Link>
                 </LinkContainer>
               </Nav>
+              </Col>
+              </Row>
             </Container>
           </Navbar>
         </div>
