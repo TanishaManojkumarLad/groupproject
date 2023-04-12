@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from "react";
 import "./contact.css";
 
@@ -77,6 +78,17 @@ const Contact = () => {
 
   return (
     <div>
+=======
+
+import "./contact.css";
+
+function Form() {
+  
+
+  return (
+    <div>
+   
+>>>>>>> origin/master
       <div className="container">
         <div className="contact-box">
           <div className="contact-leftside">
@@ -186,4 +198,13 @@ const Contact = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Contact;
+=======
+
+
+export default function Contact(){
+    return<div><Form/> </div>
+}
+
+>>>>>>> origin/master
