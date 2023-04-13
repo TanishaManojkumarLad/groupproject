@@ -38,7 +38,7 @@ function UserForm() {
   return (
     <div>
       <form method="POST" onSubmit={CheckValue}>
-      <h2> LOG IN :</h2>
+      <h2> LOG IN:</h2>
       <h5>Using your User Id and Password:</h5>
         <div>
           <Row>
