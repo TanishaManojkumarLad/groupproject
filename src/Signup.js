@@ -1,10 +1,15 @@
 import { useState } from "react";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+
 export default function Signup() {
     return (
-    <div>
-        <div>Please Enter your details:</div>
-        <div><UserForm/></div>
-    </div>)
+        <div>
+            <div>Please Enter your details:</div>
+            <div><UserForm /></div>
+        </div>)
 }
 
 function UserForm() {
@@ -57,36 +62,65 @@ function UserForm() {
         <div>
             <form method="POST" onSubmit={CheckValue}>
                 <div>
-                    <lable id="id"> User Id: </lable>
-                    <input type="text" onChange={(e) => setId(e.target.value)} />
+                    <Row>
+                        <Col xs={4}>
+                            <Form.Group className="mb-3" controlId="Id">
+                                <Form.Label> User Id:</Form.Label>
+                                <Form.Control type="text" placeholder="User Id" onChange={(e) => setId(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={4}>
+                            <Form.Group className="mb-3" controlId="Email">
+                                <Form.Label>Email address: </Form.Label>
+                                <Form.Control type="email" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={4}>
+                            <Form.Group className="mb-3" controlId="Number">
+                                <Form.Label>Contact Number:</Form.Label>
+                                <Form.Control type="text" placeholder="+1----------" onChange={(e) => setNumber(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                    </Row>
+                </div>
+
+                <div>
+                    <Row>
+                        <Col xs={12}>
+                            <Form.Group className="mb-3" controlId="Address">
+                                <Form.Label>Address:</Form.Label>
+                                <Form.Control as="textarea" rows={3} onChange={(e) => setAddress(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                    </Row>
+
                 </div>
                 <div>
-                    <lable id="email"> Email Address: </lable>
-                    <input type="email" onChange={(e) => setEmail(e.target.value)} />
+                    <Row>
+                        <Col xs={6}>
+                            <Form.Group className="mb-3" controlId="Password">
+                                <Form.Label> Password:</Form.Label>
+                                <Form.Control type="password" placeholder="********" onChange={(e) => setPassword(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={6}>
+                            <Form.Group className="mb-3" controlId="CPassword">
+                                <Form.Label> Confirm Password:</Form.Label>
+                                <Form.Control type="password" placeholder="********" onChange={(e) => setCpasswd(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                    </Row>
                 </div>
-                <div>
-                    <lable id="address"> Address: </lable>
-                    <textarea onChange={(e) => setAddress(e.target.value)} />
-                </div>
-                <div>
-                    <lable id="number"> Contact Number: </lable>
-                    <input type="text" onChange={(e) => setNumber(e.target.value)} />
-                </div>
-                <div>
-                    <lable id="passwd"> Password: </lable>
-                    <input type="password" onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <div>
-                    <lable id="cpasswd"> Confirm Password: </lable>
-                    <input type="password" onChange={(e) => setCpasswd(e.target.value)} />
-                </div>
+
                 <div style={{ color: "red" }}>
                     {errors.map((a) => (
                         <div> {a}</div>
                     ))}
                 </div>
                 <div>
-                    <input type="submit" />
+                    <Button variant="dark" type="submit">
+                        Submit
+                    </Button>
                 </div>
             </form>
         </div>
