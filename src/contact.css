@@ -1,17 +1,14 @@
-
 * {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
-  
 }
 
 body {
-  background: #000;
+  background: rgb(0, 0, 0);
   overflow: hidden;
-  
 }
 label {
-  color: #000;
+  color: rgb(0, 0, 0);
   margin: 10px;
   display: block;
   font-weight: "bold";
@@ -19,7 +16,6 @@ label {
 .container {
   width: 80%;
   margin: 50px auto;
-  
 }
 h1 {
   margin-bottom: 5px;
@@ -34,7 +30,7 @@ p {
 }
 
 .contact-leftside {
-  background: #fff;
+  background: rgb(135, 215, 252);
   flex-basis: 60%;
   padding: 40px 60px;
   font-weight: "bold";
@@ -43,7 +39,7 @@ p {
 }
 .contact-left h3 {
   margin-bottom: 30px;
-  font-weight: 600px;
+  font-weight: 60px;
 }
 .contact-right h3 {
   margin-bottom: 30px;
@@ -52,21 +48,24 @@ p {
 .contact-left h3::before {
   content: "";
   width: 60px;
-  background: black;
+  background: rgb(0, 0, 0);
 }
 
 .contact-right {
+  background-color: #3bd2f0;
   flex-basis: 40%;
-  padding: 40px;
-  background: linear-gradient(to right, #24cce2, #240b36);
-  color: #fff;
+  padding: 147px;
+  background: linear-gradient(to right, 
+  #0534b6, #240b36);
+  color: rgb(255, 255, 255);
   font-weight: "bold";
-  /* font-size: 20px; */
+
   border: none;
 }
 
 h3 {
   font-weight: "bold";
+  
 }
 
 .contact-row {
@@ -75,15 +74,15 @@ h3 {
 }
 
 .contact-row .contact-group {
-  flex-basis: 45%;
+  flex-basis: 400%;
 }
 
 input {
   width: 100%;
   border: none;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid rgb(0, 0, 0);
   padding: 6px 6px;
-  
+
   overflow: hidden;
   outline: none;
   margin-bottom: 5px;
@@ -92,24 +91,54 @@ input {
 
 textarea {
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(84, 244, 255);
   outline: none;
   overflow: hidden;
   padding: 10px;
-   margin-top: 5px; 
+  margin-top: 5px;
 }
 
-button {
+.button {
   margin-top: 15px;
   background: linear-gradient(to right, #1886df, #240b36);
   color: #fff;
   padding: 8px 20px;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.7);
+  transition-duration: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);  
+  cursor:pointer;
+
 }
+
 
 td {
   padding-right: 20px;
   padding-top: 20px;
+}
+
+form {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 2rem;
+}
+
+#errormessage {
+  color: red;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+#sendmessage {
+  color: #007bff;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.capitalize {
+  text-transform: capitalize;
 }
