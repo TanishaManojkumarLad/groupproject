@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from "react";
 import "./contact.css";
 
@@ -78,17 +77,6 @@ const Contact = () => {
 
   return (
     <div>
-=======
-
-import "./contact.css";
-
-function Form() {
-  
-
-  return (
-    <div>
-   
->>>>>>> origin/master
       <div className="container">
         <div className="contact-box">
           <div className="contact-leftside">
@@ -160,7 +148,7 @@ function Form() {
                     </>
                   ) : (
                     <div className="show" id="sendmessage">
-                      Thank you! We have recieved your message!.
+                      Thank you! We have recieved your message!
                     </div>
                   )}
                 </div>
@@ -198,13 +186,4 @@ function Form() {
   );
 };
 
-<<<<<<< HEAD
 export default Contact;
-=======
-
-
-export default function Contact(){
-    return<div><Form/> </div>
-}
-
->>>>>>> origin/master
