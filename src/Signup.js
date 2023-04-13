@@ -7,7 +7,6 @@ import Row from 'react-bootstrap/Row';
 export default function Signup() {
     return (
         <div>
-            <div>Please Enter your details:</div>
             <div><UserForm /></div>
         </div>)
 }
@@ -60,69 +59,82 @@ function UserForm() {
 
     return (
         <div>
+
             <form method="POST" onSubmit={CheckValue}>
-                <div>
-                    <Row>
-                        <Col xs={4}>
-                            <Form.Group className="mb-3" controlId="Id">
-                                <Form.Label> User Id:</Form.Label>
-                                <Form.Control type="text" placeholder="User Id" onChange={(e) => setId(e.target.value)} />
-                            </Form.Group>
-                        </Col>
-                        <Col xs={4}>
-                            <Form.Group className="mb-3" controlId="Email">
-                                <Form.Label>Email address: </Form.Label>
-                                <Form.Control type="email" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)} />
-                            </Form.Group>
-                        </Col>
-                        <Col xs={4}>
-                            <Form.Group className="mb-3" controlId="Number">
-                                <Form.Label>Contact Number:</Form.Label>
-                                <Form.Control type="text" placeholder="+1----------" onChange={(e) => setNumber(e.target.value)} />
-                            </Form.Group>
-                        </Col>
-                    </Row>
-                </div>
+                <Row>
+                    <Col xs={6}>
+                        <h2>Sign Up:</h2>
+                        <h5>Please Enter your information:</h5>
+                        <div>
+                            <Row>
+                                <Col xs={4}>
+                                    <Form.Group className="userid" controlId="Id">
+                                        <Form.Label> User Id:</Form.Label>
+                                        <Form.Control type="text" placeholder="User Id" onChange={(e) => setId(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                                <Col xs={4}>
+                                    <Form.Group className="userid" controlId="Email">
+                                        <Form.Label>Email address: </Form.Label>
+                                        <Form.Control type="email" placeholder="name@example.com" onChange={(e) => setEmail(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                                <Col xs={4}>
+                                    <Form.Group className="userid" controlId="Number">
+                                        <Form.Label>Contact Number:</Form.Label>
+                                        <Form.Control type="text" placeholder="+1----------" onChange={(e) => setNumber(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+                        </div>
+                        <hr></hr>
+                        <div>
+                            <Row>
+                                <Col xs={12}>
+                                    <Form.Group className="address" controlId="Address">
+                                        <Form.Label>Address:</Form.Label>
+                                        <Form.Control as="textarea" rows={3} onChange={(e) => setAddress(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
 
-                <div>
-                    <Row>
-                        <Col xs={12}>
-                            <Form.Group className="mb-3" controlId="Address">
-                                <Form.Label>Address:</Form.Label>
-                                <Form.Control as="textarea" rows={3} onChange={(e) => setAddress(e.target.value)} />
-                            </Form.Group>
-                        </Col>
-                    </Row>
+                        </div>
+                        <hr></hr>
+                        <div>
+                            <Row>
+                                <Col xs={6}>
+                                    <Form.Group className="password" controlId="Password">
+                                        <Form.Label> Password:</Form.Label>
+                                        <Form.Control type="password" placeholder="********" onChange={(e) => setPassword(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                                <Col xs={6}>
+                                    <Form.Group className="password" controlId="CPassword">
+                                        <Form.Label> Confirm Password:</Form.Label>
+                                        <Form.Control type="password" placeholder="********" onChange={(e) => setCpasswd(e.target.value)} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+                        </div>
 
-                </div>
-                <div>
-                    <Row>
-                        <Col xs={6}>
-                            <Form.Group className="mb-3" controlId="Password">
-                                <Form.Label> Password:</Form.Label>
-                                <Form.Control type="password" placeholder="********" onChange={(e) => setPassword(e.target.value)} />
-                            </Form.Group>
-                        </Col>
-                        <Col xs={6}>
-                            <Form.Group className="mb-3" controlId="CPassword">
-                                <Form.Label> Confirm Password:</Form.Label>
-                                <Form.Control type="password" placeholder="********" onChange={(e) => setCpasswd(e.target.value)} />
-                            </Form.Group>
-                        </Col>
-                    </Row>
-                </div>
-
-                <div style={{ color: "red" }}>
-                    {errors.map((a) => (
-                        <div> {a}</div>
-                    ))}
-                </div>
-                <div>
-                    <Button variant="dark" type="submit">
-                        Submit
-                    </Button>
-                </div>
+                        <div style={{ color: "red" }}>
+                            {errors.map((a) => (
+                                <div> {a}</div>
+                            ))}
+                        </div>
+                        <hr></hr>
+                        <div>
+                            <Button variant="dark" type="submit">
+                                Submit
+                            </Button>
+                        </div>
+                    </Col>
+                    <Col xs={6}>
+                        <img src={require('./food_1.jpg')} alt="image" width={600} height={500} />
+                    </Col>
+                </Row>
             </form>
+
         </div>
     );
 }
