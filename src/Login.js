@@ -3,14 +3,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-
+import "./login.css";
 export default function Login() {
 
   return (
     <div>
-      <div> LOG IN :</div>
-      <div> Using your User Id and Password:</div>
-      <div> <UserForm /></div>
+     <div> <UserForm /></div>
     </div>
   )
 }
@@ -40,24 +38,31 @@ function UserForm() {
   return (
     <div>
       <form method="POST" onSubmit={CheckValue}>
+      <h2> LOG IN :</h2>
+      <h5>Using your User Id and Password:</h5>
         <div>
           <Row>
-            <Col xs={12}>
-              <Form.Group className="mb-3" controlId="Id">
+            <Col xs={3}></Col>
+            <Col xs={6}>
+              <Form.Group className="Userid" controlId="Id">
                 <Form.Label> User Id:</Form.Label>
                 <Form.Control type="text" placeholder="User Id" onChange={(e) => setId(e.target.value)} />
               </Form.Group>
             </Col>
+            <Col xs={3}></Col>
           </Row>
         </div>
+         
         <div>
           <Row>
-            <Col xs={12}>
-              <Form.Group className="mb-3" controlId="Password">
+          <Col xs={3}></Col>
+            <Col xs={6}>
+              <Form.Group className="password" controlId="Password">
                 <Form.Label> Password:</Form.Label>
                 <Form.Control type="password" placeholder="********" onChange={(e) => setPassword(e.target.value)} />
               </Form.Group>
             </Col>
+            <Col xs={3}></Col>
           </Row>
         </div>
         <div style={{ color: "red" }}>
