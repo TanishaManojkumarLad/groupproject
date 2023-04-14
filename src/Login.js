@@ -41,7 +41,7 @@ function UserForm() {
     <div>
       <form method="POST" onSubmit={CheckValue}>
         <Row>
-          <Col xs={6}><img src={require('./food.jpg')} alt="food image" /></Col>
+
           <Col xs={6}>
             <h2> LOG IN:</h2>
             <h5>Using your User Id and Password:</h5>
@@ -77,7 +77,7 @@ function UserForm() {
               ))}
 
             </div>
-             <hr></hr>
+            <hr></hr>
             <div>
 
               <Button variant="dark" type="submit">
@@ -85,6 +85,9 @@ function UserForm() {
               </Button>
 
             </div>
+          </Col>
+          <Col xs={6}>
+            <img src={require('./food.jpg')} alt="differet food" widht={350} height={350} />
           </Col>
         </Row>
       </form>
