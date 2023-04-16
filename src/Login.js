@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import { FormGroup } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import "./login.css";
 export default function Login() {
@@ -19,7 +20,7 @@ function UserForm() {
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-
+  let navigate = useNavigate();
   const CheckValue = (e) => {
     var errors = [];
     if (id.trim().length === 0) {
@@ -39,7 +40,10 @@ function UserForm() {
 
   return (
     <div>
-      <form method="POST" onSubmit={CheckValue}>
+      <form method="POST" onSubmit={(e) => {
+                e.preventDefault();
+                navigate("/");
+              }}>
         <Row>
 
           <Col xs={6}>
@@ -79,8 +83,8 @@ function UserForm() {
             </div>
             <hr></hr>
             <div>
-
-              <Button variant="dark" type="submit">
+            
+              <Button variant="dark" type="submit" onClick={CheckValue}>
                 Submit
               </Button>
 

@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-
+import { useNavigate } from "react-router-dom";
 export default function Signup() {
     return (
         <div>
@@ -19,7 +19,7 @@ function UserForm() {
     const [password, setPassword] = useState("");
     const [cpasswd, setCpasswd] = useState("");
     const [errors, setErrors] = useState([]);
-
+    let navigate = useNavigate();
     const CheckValue = (e) => {
         var errors = [];
         if (id.trim().length === 0) {
@@ -60,7 +60,10 @@ function UserForm() {
     return (
         <div>
 
-            <form method="POST" onSubmit={CheckValue}>
+            <form method="POST" onSubmit={(e) => {
+                e.preventDefault();
+                navigate("/");
+            }}>
                 <Row>
                     <Col xs={6}>
                         <h2>Sign Up:</h2>
@@ -124,7 +127,7 @@ function UserForm() {
                         </div>
                         <hr></hr>
                         <div>
-                            <Button variant="dark" type="submit">
+                            <Button variant="dark" type="submit" onClick={CheckValue}>
                                 Submit
                             </Button>
                         </div>

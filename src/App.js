@@ -25,6 +25,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<Notfound/>}/>
           </Routes>
 
         </div>
@@ -33,6 +34,9 @@ function App() {
 
   );
 }
+ function Notfound() {
+  return <div>Sorry, page not found!!</div>
+ }
 
 function MenuBar(){
  return (
