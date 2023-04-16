@@ -1,93 +1,67 @@
 import Button from 'react-bootstrap/Button';
 import React, { useState, useEffect } from 'react'
 
-
 export default function Food() {
-    return <div>
 
-        <div>Food page
+    const [menuState, setMenu] = useState([]);
+    const [error, setError] = useState(null)
+    const [loaded, isLoaded] = useState(false);
 
-        </div>
-
-        <div>
-
-            <button>Fried Chicken</button>
-
-        </div>
-
-        <div>
-
-            <button >Salad</button>
-
-        </div>
-
-        <div>
-
-            <button>Pizza</button>
-
-        </div>
-
-        <div>
-
-            <button href="App.css">French Fries</button>
-
-        </div>
-
-
-
-    </div>
-
-
-
-
-
-}
-
-// API Link for future reference
-
-//Pizza and Desserts api key: 103ddd65b7msh1a7b70cf504bb14p173c35jsnd33e6361294d
-
-//api host: pizza-and-desserts.p.rapidapi.com
-
-//url: https://pizza-and-desserts.p.rapidapi.com/pizzas/1
-
-const MenuCard = (props) => {
-
-    const [menuState, setMenu] = useState('');
-
-
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': 'bbc1b4c64fmsh7dbf106dddfef9ep1e4162jsn7c4bb140dfd5',
+            'X-RapidAPI-Host': 'the-mexican-food-db.p.rapidapi.com'
+        }
+    };
 
     useEffect(() => {
 
+        fetch('https://the-mexican-food-db.p.rapidapi.com/', options)
+            .then((response) => response.json())
+            .then((json) => {
+                setMenu(json);
+                console.log(json);
+            });
+    }, []);
+
+    if (error) {
+
+        return <div>Error: {error.message}</div>;
+
+    } else if (!isLoaded) {
+
+        return <div>Loading...</div>;
+
+    } else {
+
+        return (
+
+            <ul>
+
+                {menuState.map(item => (
+
+                    <li key={item.id} onClick={clickEvent}>
+
+                        {item.title} <img src={item.image} alt="different items" width={70} height={70} />
+
+                    </li>
+
+                ))}
 
 
 
+            </ul>
+        );
 
-    }, []
-
-    )
-
-
+    }
 
 }
 
 
 
-function listFood() {
+const clickEvent = () => {
 
-    let foods = [
+    alert("this item has been selected")
 
-        {
-            "Name": "3 Piece Fried Chicken",
-
-            "Price": 5.99,
-
-            "Spice Level": 0,
-
-            "Description": "Fried Chicken with chickens from the Miyagi prefecture"
-
-        },
-
-    ]
-
-}
+};
